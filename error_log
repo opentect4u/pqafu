@@ -1,0 +1,2 @@
+[21-Mar-2021 04:33:51 UTC] PHP Fatal error:  require_once(): Failed opening required '/var/www/html/pqafu/vendor/autoload.php' (include_path='.:/opt/alt/php56/usr/share/pear') in /home2/pqafucom/public_html/application/controllers/Paypal.php on line 4
+[21-Mar-2021 04:35:07 UTC] PHP Fatal error:  require_once(): Failed opening required '/var/www/html/pqafu/vendor/autoload.php' (include_path='.:/opt/alt/php56/usr/share/pear') in /home2/pqafucom/public_html/application/controllers/Paypal.php on line 4

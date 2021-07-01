@@ -1,0 +1,48 @@
+<div class="main-panel">
+<div class="content-wrapper"> 
+
+<div class="card">
+<div class="card-body">
+<div class="row">
+<div class="col-4">
+
+                          <h3 class="text-primary">Add Category </h3>
+
+
+        
+            <form class="form-horizontal" action="<?=base_url()?>index.php/admin/add_new/editcategory" method = "POST">
+                    <input type="hidden" value="<?php echo $cat->id; ?>" name='id'>
+                <div class="form-group">
+                    <label for="text1" class="control-label">Name</label>
+
+                   <div class="fieldSec">
+                        <input type="text" id="text1" placeholder="Name of Category" class="form-control" name="cat_name" 
+                                value="<?php echo $cat->cat_name; ?>"
+                        required>
+                    </div>
+                </div>
+             
+
+                   <div class="form-actions no-margin-bottom">
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </div>
+
+                <!-- /.form-group -->
+
+                <!-- /.row -->
+
+                <!-- /.form-group -->
+            </form>
+        
+<!-- /.inner -->
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<!-- /.outer -->
+</div>
+<!-- /#content -->
+
+</div>
