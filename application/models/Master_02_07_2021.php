@@ -1641,31 +1641,7 @@ class Master extends CI_Model {
 
       $query = $this->db->query($sql);
    }
-    
-    // SUBHAM SAMANTA 02/07/2021 //
-   // GET ANSWER BY QUESTION ID //
 
-   function get_answer_by_qid($id){
-        $this->db->select('id, answer');
-        $this->db->where(array(
-            'qu_id' => $id
-        ));
-        $query = $this->db->get('td_answer');
-        return $query->result();
-   }
-
-   function save_answer($data){
-        $input = array(
-            "answer"          =>  $data['answer'],
-            "user_id"         =>  $this->session->userdata('admin_id'),
-            "qu_id"           =>  $data['id'],
-            "ans_status"      =>  'A',
-            "created_dt"      =>  date('Y-m-d H:i:s'),
-            "created_by"      =>  $this->session->userdata('admin_name')
-        );
-        $this->db->insert('td_answer', $input);
-        return true;
-    }
 
 
 }

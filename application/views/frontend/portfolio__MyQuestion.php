@@ -1,3 +1,50 @@
+<script>
+    $(document).ready(function(){
+        var list_length = $('#question_list > .listBox').length;
+        var counter = 5;
+        $('#question_list > div.listBox').slice(0, counter).show();
+        if(list_length > counter){
+            $('#showLess').hide();
+        }else{
+            $('#loadMore').hide();
+            $('#showLess').hide();
+        }
+        $('#loadMore').on('click', function(){
+            $('.listBox:hidden').slice(0, counter).show();
+            if($(".listBox:hidden").length == 0){
+                $(this).hide();
+                $('#showLess').show();
+            }else{
+                $('#showLess').show();
+            }
+        })
+        $('#showLess').on('click', function(){
+            var ln = $('.listBox:visible').length - counter;
+            var ct = 0;
+            if(ln >= counter){
+                ct = 6;
+            }else{
+                ct = ln + 1;
+            }
+            if(ln > 0){
+                $('.listBox:gt(-'+ct+')').hide();
+                if($('.listBox:visible').length == counter){
+                    $(this).hide();
+                    $('#loadMore').show();
+                }else{
+                    $(this).show();
+                    $('#loadMore').show();
+                }
+            }else{
+                $(this).hide();
+                $('#loadMore').show();
+            }
+        })
+        
+    })    
+</script>
+
+
 <div class="breadcrumb">
 	<ul>
 <li><a href="<?=base_url()?>user">Home</a></li>  <li>&gt;</li>  
@@ -15,13 +62,14 @@
 	<div class="rightsideSection">
 	<h1>My Question</h1>
 
-	<div class="post-box" id="myList">	
-		<?php  
+	<!--<div class="post-box" id="myList">-->
+	    <div class="post-box" id="question_list">	
+		<?php 
                 if($question){
 
 		 foreach($question as $ques) {   ?>	
 
-<div class="listBox">
+<div class="listBox" style="display:none;">
 
 	<?php if($ques->qts_type == 'P') {   ?> 
 		<div class="premium">premium</div>

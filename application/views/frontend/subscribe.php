@@ -56,7 +56,9 @@
 
                   $actual_price1 = $ra->amount;
 
-                  $discount1     = $ra->discount;
+                  //$discount1     = $ra->discount;
+                  $dis_amt     = explode('.', $ra->discount);
+                  $discount1 = $dis_amt[1] > 0 ? $ra->discount : $dis_amt[0];
 
                   $dis_price1    = $ra->dis_amt;
 
@@ -70,20 +72,27 @@
 
 
 
-<h2><span>$ <?=$dis_price1?> / Day</span>
+<h2><span style="color: #12A89D; !importent">$ <?=$dis_price1?> / Day</span>
 
   <input type="hidden" name="amount" value="<?=$dis_price1?>">
 
-<span class="lineThrou">($<?=$actual_price1?>)</span></h2>
+<span class="lineThrou" style="color: #ea890b; !importent">($<?=$actual_price1?>)</span></h2>
 
-<h3><?=$discount1?>% Discount</h3>
+<h3 style="color: #6bc700; !importent"><?=$discount1?>% Discount</h3>
 
 <?php } else{ ?> 
 
               <input type="hidden" name="amount" value="<?=$dis_price1?>">
 
    <span>$ <?=$dis_price1?> / Day</span>  <?php }  ?>
-
+	<div class="responsiveSubscrip">
+		<div class="bronzeCol"><p class="mostPop2">Good for quick searcher</p></div>
+		<div class="paymentResBtn">
+		<a href="<?=base_url()?>Paypal/second?amt=<?=$dis_price1?>&prod_id=1" class="paypleBtn"><img src="<?=base_url()?>frontend/images/paypal.png" alt=""></a>
+    
+    <a href="<?=base_url()?>StripeController/spay?amt=<?=$dis_price1?>&prod_id=1" class="stripeBtn"><img src="<?=base_url()?>frontend/images/stripe.png" alt=""></a>
+		</div>
+		</div>
 
 
 </td>
@@ -98,7 +107,8 @@
 
                   $actual_price2 = $ra->amount; 
 
-                  $discount2     = $ra->discount;
+                  $dis_amt     = explode('.', $ra->discount);
+                  $discount2 = $dis_amt[1] > 0 ? $ra->discount : $dis_amt[0];
 
                   $dis_price2    = $ra->dis_amt;
 
@@ -112,17 +122,26 @@
 
        ?>
 
-		<h2><span>$ <?=$dis_price2?> / Week</span>
+		<h2><span style="color: #12A89D; !importent">$ <?=$dis_price2?> / Week</span>
 
        <input type="hidden" name="amount" value="<?=$dis_price2?>">
 
 <span class="lineThrou">($<?=$actual_price2?>)</span></h2>
 
-<h3><?=$discount2?>% Discount</h3>
+<h3 style="color: #6bc700; !importent"><?=$discount2?>% Discount</h3>
 
 <?php } else{ ?>  <input type="hidden" name="amount" value="<?=$dis_price2?>">
 
   <h2> <span>$ <?=$dis_price2?> / Week</span></h2>  <?php }  ?>
+		
+		<div class="responsiveSubscrip">
+		 <div class="silverCol"><p class="mostPop2">Most Popular</p></div>
+		 
+	   <div class="paymentResBtn">
+		   <a href="<?=base_url()?>Paypal/subscription?amt=<?=$dis_price2?>&prod_id=2" class="paypleBtn"><img src="<?=base_url()?>frontend/images/paypal.png" alt=""></a>
+    <a href="<?=base_url()?>StripeController/spay?amt=<?=$dis_price2?>&prod_id=2" class="stripeBtn"><img src="<?=base_url()?>frontend/images/stripe.png" alt=""></a>
+	   </div>
+	  </div>
 
 </td>
 
@@ -136,7 +155,9 @@
 
                   $actual_price3 = $ra->amount; 
 
-                   $discount3    = $ra->discount;
+                //   $discount3    = $ra->discount;
+                  $dis_amt     = explode('.', $ra->discount);
+                  $discount3 = $dis_amt[1] > 0 ? $ra->discount : $dis_amt[0];
 
                   $dis_price3    = $ra->dis_amt;
 
@@ -152,15 +173,23 @@
 
        <input type="hidden" name="amount" value="<?=$dis_price3?>">
 
-<span class="lineThrou">($<?=$actual_price3?>)</span></h2>
+<span class="lineThrou" style="color: #ea890b; !importent">($<?=$actual_price3?>)</span></h2>
 
-<h3><?=$discount3?>% Discount</h3>
+<h3 style="color: #6bc700; !importent"><?=$discount3?>% Discount</h3>
 
 <?php } else{ ?> 
 
      <input type="hidden" name="amount" value="<?=$dis_price3?>">
 
   <h2> <span>$ <?=$dis_price3?> / Month</span> </h2> <?php }  ?>
+		
+		<div class="responsiveSubscrip">
+    <div class="goldCol"><p class="mostPop2">Best plane for University Student</p></div>
+		 
+	   <div class="paymentResBtn">
+		    <a href="<?=base_url()?>Paypal/subscription?amt=<?=$dis_price3?>&prod_id=3" class="paypleBtn"><img src="<?=base_url()?>frontend/images/paypal.png" alt=""></a>
+    <a href="<?=base_url()?>StripeController/spay?amt=<?=$dis_price3?>&prod_id=3" class="stripeBtn"><img src="<?=base_url()?>frontend/images/stripe.png" alt=""></a></div>
+	  </div>
 
 </td>
 
@@ -175,7 +204,7 @@
 
     <td class="bronzeCol"><p class="mostPop2">Good for quick searcher</p></td>
 
-    <td class="silverCol"><p class="mostPop">Most Popular</p></td>
+    <td class="silverCol"><p class="mostPop2" style="font-size: 20px; !importent">Most Popular</p></td>
 
     <td class="goldCol"><p class="mostPop2">Best plane for University Student</p></td>
 

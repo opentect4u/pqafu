@@ -13,6 +13,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	
+<link rel="stylesheet" href="<?=base_url()?>frontend/assets/css/style.css">
+	
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>frontend/css/apps.css">
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>frontend/css/apps_inner.css">
 <link rel="stylesheet" type="text/css" href="<?=base_url()?>frontend/css/res.css">
@@ -82,6 +84,79 @@
 </div>
 <div class="wrapper">
 	<div class="col-sm-12">
+		<div class="responsiveLogoMenu">
+		<?php	if(! $this->session->userdata('user_id')){ ?>
+<a class="logoImgRes" href="<?=base_url()?>"><img src="<?=base_url()?>frontend/images/logo.jpg" alt=""></a>
+<?php	}else{ ?>
+<a class="logoImgRes" href="<?=base_url()?>user"><img src="<?=base_url()?>frontend/images/logo.jpg" alt=""></a>
+
+	<?php	} ?>
+			
+			
+		<a class="btn btn-primary open-menu btnResponsive" href="#" role="button">
+                    <i class="fa fa-bars" aria-hidden="true"></i></a>
+			<nav class="sidebar">
+				
+				<!-- close sidebar menu -->
+				<div class="dismiss">
+					<i class="fa fa-angle-left" aria-hidden="true"></i>
+
+
+
+				</div>
+				
+				<div class="logoSidebar">
+					<a href="#"><img src="images/logo.png" alt="" class="logoImg"/></a>
+				</div>
+				
+				<ul class="list-unstyled menu-elements">
+
+
+	 
+	 <?php	if(! $this->session->userdata('user_id')){ ?>
+	 	<li <?php	$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+	 	if($actual_link == base_url()){
+
+	 		echo 'class="active"';
+
+	 	} ?> >
+		<a href="<?=base_url()?>">Home</a>
+	</li>
+	<?php	}else{ ?>
+			<li <?php	if (strpos($_SERVER['REQUEST_URI'], "user") !== false){
+                    echo 'class="active"';
+}  ?> >
+         <a href="<?=base_url()?>user">Home</a>
+
+         </li>
+	<?php	} ?>
+	 
+	 <li  <?php	if (strpos($_SERVER['REQUEST_URI'], "about") !== false){
+                    echo 'class="active"';
+}  ?>  >
+		<a href="<?=base_url()?>about">About Us</a>
+	 </li>
+	  <li    <?php	if (strpos($_SERVER['REQUEST_URI'], "blog") !== false){
+                    echo 'class="active"';
+}  ?>   >
+		<a href="<?=base_url()?>blog">Blog</a>
+	 </li>
+	 <li   <?php	if (strpos($_SERVER['REQUEST_URI'], "post_question") !== false){
+                    echo 'class="active"';
+}  ?>  >
+		<a href="<?=base_url()?>post_question">Ask Your Questions</a>
+	 </li>
+  </ul>
+				
+				
+				
+			
+			</nav>
+			
+		</div>
+			
+		
 <nav class="navbar navbar-expand-lg navbar-light">
 	 <?php	if(! $this->session->userdata('user_id')){ ?>
 <a class="logoImg" href="<?=base_url()?>"><img src="<?=base_url()?>frontend/images/logo.jpg" alt=""></a>
@@ -91,7 +166,7 @@
 	<?php	} ?>
 
 <div class="rightNavSec">
-  <ul>
+  <ul class="desktopMenu">
 
 
 	 

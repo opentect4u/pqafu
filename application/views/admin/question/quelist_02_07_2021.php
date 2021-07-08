@@ -98,7 +98,6 @@ input:checked + .slider .off
   border-radius: 50%;}
     
 </style>
-<script src="<?=base_url()?>ckeditor/ckeditor.js"></script>
 
 <div class="main-panel">
                     <div class="content-wrapper"> 
@@ -151,8 +150,8 @@ input:checked + .slider .off
                                 <td class="wrapperCustom"><div style="width: 350px;">
 
 
-      <?php if(isset($qu->question)){ if(strlen($qu->question) > 50 ) {echo substr($qu->question,0,50).'<button type="button" class="btn btn-primary modal_open" name="modalbtn_'.$qu->id.'" data-toggle="modal" data-target="#exampleModal_'.$qu->id.'">Read Question</button>';}else{
-          echo $qu->question.'<button type="button" class="btn btn-primary modal_open" name="modalbtn_'.$qu->id.'" data-toggle="modal" data-target="#exampleModal_'.$qu->id.'">Read Question</button>';
+      <?php if(isset($qu->question)){ if(strlen($qu->question) > 50 ) {echo substr($qu->question,0,50).'<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal_'.$qu->id.'">Read Question</button>';}else{
+          echo $qu->question;
         }
 
       }?>
@@ -366,7 +365,7 @@ $(document).on('click','.status_change',function(){
             <div class="btn_custom_group">
                          <div class="changestatus_custom">
                                 <label class="switch">
-                                   <input type="checkbox" id="togBtn" id="<?=$qu->id;?>" class="tot status ansClk_<?= $qu->id; ?>" name="status" <?php if($qu->qts_status == 'A'){  echo "checked";} ?> value="<?=$qu->qts_status;?>,<?=$qu->id;?>">
+                                   <input type="checkbox" id="togBtn" id="<?=$qu->id;?>" class="tot status" name="status" <?php if($qu->qts_status == 'A'){  echo "checked";} ?> value="<?=$qu->qts_status;?>,<?=$qu->id;?>">
 
                                    <div class="slider round">
                                     <!--ADDED HTML -->
@@ -385,24 +384,8 @@ $(document).on('click','.status_change',function(){
                                     <span class="on">PAID</span>
                                     <span class="off">FREE</span><!--END--></div>
                               </label>
+
                         </div>
-                        <!-- SUBHAM SAMANTA 02/07/2021 -->
-                        <div class="col-sm-12" id="answer_show_<?=$qu->id;?>" style="margin-bottom: 15px; display:none;">
-                          <label for="text1" class="control-label">Answer</label>
-                          <div class="fieldSec">
-                            <textarea name="answer" class="form-control" rows="6" id="editor_<?=$qu->id;?>" ><?php /* if(isset($que->answer)){ echo $que->answer;}*/ ?></textarea>
-                            <script>
-                              CKEDITOR.replace('editor_<?=$qu->id;?>', {
-                                filebrowserUploadUrl: '<?=base_url();?>admin/Cw/editor_upload',
-                                filebrowserUploadMethod: 'form'
-                              });
-                            </script>
-                          </div>
-                          <div>
-                              <button type="button" class="btn btn-primary mt-4 pull-right" onclick="submit_ans(<?=$qu->id;?>)">Post</button>
-                          </div>
-                        </div>
-                        <!-- END -->
                 </div>
       </div>
       <div class="modal-footer">
@@ -435,13 +418,12 @@ $(document).on('click','.status_change',function(){
            statuss = 'A';
         }
           
-            url = "<?php echo base_url().'index.php/admin/qa/change_status'?>";
-            load_answer(id); 
+            url = "<?php echo base_url().'index.php/admin/qa/change_status'?>"; 
                 $.ajax({
                   type:"POST",
                   url: url, 
                   data: {"id":id,"status":statuss}, 
-                  success: function(data) {
+                  success: function(data) { 
                   //location.reload();
                  } });        
 
@@ -555,69 +537,4 @@ $(document).on('click','.status_change',function(){
 
     })
  
-</script>
-
-<!-- SUBHAM SAMANTA 02/07/2021
-    LOAD ANSWER AND POST ANSWER -->
-<script>
-$('.modal_open').on('click', function(){
-    var val      = $(this).attr('name');
-    var row      = val.split("_");
-    var id       = row[1];
-    if($('.ansClk_'+id).is(':checked')){
-        load_answer(id);
-    }
-})
-// $('div.modal.fade').on('show', function(){
-//     console.log($(this).attr('id'));
-// })
-// $( document ).ready(function() {
-//     if($('div.modal.fade').is(':visible')){
-//       console.log($('.modal.fade').attr('id')); 
-//     }
-// });
-function load_answer(id){
-  // $('#answer_show').show();
-  if($('.ansClk_'+id).is(':checked')){
-    $.ajax({
-      type:"GET",
-      url: "<?= site_url() ?>admin/qa/get_answer_by_qid", 
-      data: {"id":id}, 
-      success: function(data) {
-        var dt = JSON.parse(data);
-        console.log(dt.length);
-        if(dt.length > 0){
-          var answer = dt[0].answer;
-          CKEDITOR.instances['editor_'+id].setData(answer);
-        }
-      } 
-    });
-    $('#answer_show_'+id).fadeIn();
-  }else{
-    CKEDITOR.instances['editor_'+id].setData('');
-    $('#answer_show_'+id).fadeOut();
-  }
-}
-
-function submit_ans(id){
-  var answer = CKEDITOR.instances['editor_'+id].getData();
-  if(answer.length > 0){
-    $.ajax({
-      type:"POST",
-      url: "<?= site_url() ?>admin/qa/save_answer", 
-      data: {id:id, answer: answer}, 
-      success: function(data) {
-        console.log(data);
-        if(data > 0){
-          location.reload();
-        }else{
-          alert('Something Went Wrong !!');
-        }
-        
-      } 
-    });
-  }else{
-    alert('Please enter something to post answer!!');
-  }
-}
 </script>

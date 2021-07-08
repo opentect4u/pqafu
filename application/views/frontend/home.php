@@ -1,3 +1,51 @@
+<script>
+    $(document).ready(function(){
+        var list_length = $('#question_list > .listBox').length;
+        console.log(list_length);
+        var counter = 5;
+        $('.listBox').slice(0, counter).show();
+        if(list_length > counter){
+            $('#showLess').hide();
+        }else{
+            $('#loadMore').hide();
+            $('#showLess').hide();
+        }
+        $('#loadMore').on('click', function(){
+            $('.listBox:hidden').slice(0, counter).show();
+            if($(".listBox:hidden").length == 0){
+                $(this).hide();
+                $('#showLess').show();
+            }else{
+                $('#showLess').show();
+            }
+        })
+        $('#showLess').on('click', function(){
+            var ln = $('.listBox:visible').length - counter;
+            var ct = 0;
+            if(ln >= counter){
+                ct = 6;
+            }else{
+                ct = ln + 1;
+            }
+            console.log(ct);
+            if(ln > 0){
+                $('.listBox:visible:gt(-'+ct+')').hide();
+                if($('.listBox:visible').length == counter){
+                    $(this).hide();
+                    $('#loadMore').show();
+                }else{
+                    $(this).show();
+                    $('#loadMore').show();
+                }
+            }else{
+                $(this).hide();
+                $('#loadMore').show();
+            }
+        })
+        
+    })    
+</script>
+
 <header class="header-banner text-white">
 <div class="wrapper">
 <div class="col-sm-6">
@@ -9,7 +57,7 @@
 </div>
 </header>
 <div class="wrapper homeBotPading">
-<div class="col-sm-9 float-left">
+<div class="col-sm-9 float-left homeLeftBar">
 
 <div class="slider-area">           
   <div class="txt">
@@ -29,14 +77,14 @@
 
 <div id="search">
 
-	<div class="post-box" id="">
+	<div class="post-box" id="question_list">
 
 		<?php //echo "<pre>";var_dump($question);exit;
 
 
 		foreach($question as $ques) {   ?>
 			
-	   <div class="listBox">
+	   <div class="listBox" style="display:none;">
 		<?php if($ques->qts_type == 'P') {   ?> 
 		<div class="premium">premium</div>
 		<?php }else{?>
@@ -100,7 +148,7 @@
 
 
 
-<div class="col-sm-3 float-left">
+<div class="col-sm-3 float-left homeRightBar">
 <div class="g-ads">
 <img src="<?=base_url()?>frontend/images/ls.jpg" alt="">
 </div>

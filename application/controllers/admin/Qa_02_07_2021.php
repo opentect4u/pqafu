@@ -446,22 +446,5 @@ class Qa extends CI_Controller {
 
 	}
 	/// **** End Code For Edit Answer Status *********** //
-	
-	// SUBHAM SAMANTA 02/07/2021 //
-	// GET ANSWER WITH QUESTION ID //
-	function get_answer_by_qid(){
-		$id = $this->input->get('id');
-		$result = $this->Master->get_answer_by_qid($id);
-		echo json_encode($result);
-	}
-
-	function save_answer(){
-		$data = $this->input->post();
-		if($this->Master->save_answer($data)){
-			echo "1";
-		}else{
-			echo "0";
-		}
-	}
 
 }

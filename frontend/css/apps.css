@@ -125,7 +125,7 @@ input.form-control.mr-sm-2 {
     color: #302f2f; font-size: 13px; 
 }
 nav.navbar.navbar-expand-lg.navbar-light {
-    padding: 16px 0;
+    padding: 16px 0; margin-bottom: 0;
 }
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 19px;
@@ -149,6 +149,9 @@ nav.navbar.navbar-expand-lg.navbar-light {
 .form_inlineCustomeAfterLog {float: right;max-width: 58%;width: 100%;}
 .form_inlineCustomeAfterLog input[type="search"]{width: 85%; float: left; background: #dbdcde url("../images/searchIcon.png") no-repeat 97%; font-style: italic; color: #302f2f; font-size: 13px;}
 */
+
+.responsiveLogoMenu{display: none;}
+.logoImgRes{display: none;}
 
 .header-banner{
 	background-image: url('../images/img1.jpg');
@@ -245,8 +248,9 @@ nav.navbar.navbar-expand-lg.navbar-light {
 
 .listBox{margin: 0 0 32px 0; box-shadow: 5px 0 10px 2px #efefef; border: 1px solid #e2e2e26e; padding: 12px; position: relative; overflow: hidden;}
 .listBoxBody{width: 100%; display: flex;}
-.listBoxBody .thumbnailBox{width: 63px; height: 63px; border-radius: 50px; border: #fff solid 1px; overflow: hidden; box-shadow:0px 0 7px 4px #dfdfdf; margin-right: 22px;}
-.listRightDetails{padding-right: 50px; max-width: 673px;}
+.listBoxBody .thumbnailBox{margin-right: 22px; width: 100%; max-width: 10%;}
+.listBoxBody .thumbnailBox img{width: 63px; height: 63px; border-radius: 50px; border: #fff solid 1px; overflow: hidden; box-shadow:0px 0 7px 4px #dfdfdf; }
+.listRightDetails{padding-right: 50px;  width: 100%; max-width:90%;}
 .listRightDetails p.topBarCat{margin: 0; padding: 0; color: #202228; font-size: 13px;}
 
 .listRightDetails p.topBarCat span{color: #13a89e; margin-right: 20px;}
@@ -415,8 +419,8 @@ p.privacy{margin:0 0 12px 0; padding: 0;}
 p.privacy a{color: #fff; margin: 0 5px;text-decoration: none;}
 p.privacy a:hover{text-decoration: underline;}
 
+.btnResponsive{display: none;}
 
 
-
-
+.responsiveSubscrip{display: none;}
 

@@ -1,10 +1,167 @@
 
 
-
-@media only screen and (max-width: 767px) {
-
+@media only screen and (max-width:1150px) {
+	.memberShipArea{padding: 0 15px;}
+	
 }
 
 
+@media only screen and (max-width:1100px) {
+	.rightNavSec ul li a {padding: 8px 7px;}
+	
+}
+
+
+
+@media only screen and (max-width:1080px) {
+	.rightNavSec ul li a {padding: 8px 7px;}
+	
+}
+	
+@media only screen and (max-width: 1000px) {
+	.topbar_left{width: 20%; max-width: 100%;}
+	.topbar_right{width: 80%; max-width: 100%;}
+}	
+
+@media only screen and (max-width:991px) {	
+	
+	.logoImg {display: none}
+	.responsiveLogoMenu{display: block;}
+	.logoImgRes{display: inline-block;}
+	.logoImgRes img{max-width: 120px;}
+	.btnResponsive{display: block;}
+	.rightNavSec{display: flex;}
+	.rightNavSec ul.desktopMenu{display: none;}
+	.responsiveLogoMenu{padding-top: 12px; padding-bottom: 12px; position: relative;}
+	
+	nav.navbar.navbar-expand-lg.navbar-light{padding: 0;}
+	
+}
+
+@media only screen and (max-width: 850px) {
+	.listBoxBody{display: inline-block;}
+	.listBoxBody .thumbnailBox {margin-right: 0; max-width: 100%;  margin-bottom: 15px;}
+	.listRightDetails {max-width: 100%; margin-bottom: 15px;}
+	.listRightDetails a.readMoreQues {margin: 10px 0 0 0; display: inline-block;}
+	
+	.memberShipArea .tab-content .tabContent:nth-child(1) table tr td:nth-child(1) {display: none;}
+	.memberShipArea .tab-content .tabContent:nth-child(1) table tr td:nth-child(2){border-left: none;}
+	.responsiveSubscrip{display: block; margin-top: 12px;}
+	.responsiveSubscrip .bronzeCol, .responsiveSubscrip .silverCol, .responsiveSubscrip .goldCol{margin-bottom: 10px;}
+	
+	
+	.memberShipArea .tab-content .tabContent:nth-child(1) table tr td.bronzeCol, 
+	.memberShipArea .tab-content .tabContent:nth-child(1) table tr td.silverCol, .memberShipArea .tab-content .tabContent:nth-child(1) table tr td.goldCol{display: none;}
+	.memberShipArea .tab-content .tabContent:nth-child(1) table tfoot{display: none;}
+	.memberShipArea .tabContent table tr td {float: left; width: 100% !important;}
+	.memberShipArea .tab-content .tabContent:nth-child(1) table tr td:nth-child(3), 
+	.memberShipArea .tab-content .tabContent:nth-child(1) table tr td:nth-child(4){border-left: none;}
+
+}
+
+@media only screen and (max-width: 830px) {
+	.topbar_left{width: 100%; max-width: 100%; text-align: center; margin-bottom: 5px;}
+	.topbar_right{width:100%; max-width: 100%; text-align: center;}
+	
+	.leftSidebar .navigation ul li {padding: 5px 0;}
+	.leftSidebar .navigation ul li a, .leftSidebar .navigation ul li.active a {font-size: 14px;}
+	.leftSidebar .navigation ul li a:hover, .leftSidebar .navigation ul li.active a:hover {font-size: 14px;}
+	
+	.leftSidebar .navigation a.orgBtn {padding: 7px 14px; font-size: 15px;}
+}
+
+
+
+	
+	
+@media only screen and (max-width:767px) {			
+	.header-banner .col-sm-6{max-width: 100%;}
+	.homeBotPading .col-sm-9{max-width: 100%;}
+	.homeBotPading .col-sm-3{max-width: 100%;}
+	
+	.g-ads {max-width: 250px; margin: 0 auto 30px auto;}
+	.homeLeftBar{margin-bottom: 20px;}
+	
+	.socialMediaSec {max-width: 250px; margin: 0 auto 38px auto; display: inherit;}
+	.socialMediaSec ul {display: inline-block;}
+	.recentPost{max-width: 250px; margin:0 auto 25px auto; display: inherit;}
+	
+	.subscriptionBtnCustom img{max-width: 43px;}
+	
+	.header-bannerAbout {padding-top: 28px; padding-bottom: 25px; min-height: inherit; background-size: cover; background-position: right center;}
+	.header-bannerAbout h1 {margin-bottom: 6px; font-size: 35px; font-weight: 600;}
+	.header-bannerAbout p {line-height: 22px; font-size: 14px;}
+	
+	.aboutFull .rightSection h2, .ourValues .rightSection h4, .ourValues .rightSection h4 {font-size: 28px; padding: 0 0 8px 0;}
+	.aboutFull .rightSection p, .ourValues .rightSection p {font-size: 14px; line-height: 23px;}
+	.ourValues {margin: 0 0 23px 0;}
+	.aboutFull {margin-bottom: 40px; padding-top: 42px; padding-bottom: 7px;}
+	
+	.imgLeft{max-width: 100%; text-align: center;}
+	.ourValues .imgLeft {max-width: 100%; text-align: center; padding-bottom: 25px;}
+	.aboutFull .rightSection, .ourValues .rightSection{max-width: 100%; text-align: center;}
+	
+	.loginBody {padding:0 15px;}
+	.loginWraper {padding: 20px 9px 12px 9px;}
+	.loginWraper h1 {font-size: 24px; margin-bottom: 20px;}
+	.loginWraper p {color: #252525; font-size: 14px;}
+	
+	.loginWraper .form-control {height: 38px;}
+	label.inputWraper i {top: 9px;}
+	.captureMain .captureInput input {height: 37px;}
+	
+	.leftSidebar {margin-bottom: 25px;}
+	.rightsideSection h1, .memberShipArea h1 {font-size: 20px; margin-bottom: 16px;}
+	.bodyContainer {padding: 35px 0 35px 0;}
+}
+	
+@media only screen and (max-width:600px) {	
+	.slider-area {height: 259px; padding-bottom: 25px;}
+	.slider-area .txt {padding: 37px 0 0 35px;}
+	.slider-area .txt h2 {font-size: 25px; margin-bottom: 20px;}
+	.slider-area .txt p {font-size: 21px; margin-top: 0px;}
+	.slider-area a.orgBtn {font-size: 16px; font-weight: 600; padding: 9px 18px; display: inline-block;}
+}
+	
+	
+@media only screen and (max-width:500px) {		
+	.rightNavSec .orgBtn {width: auto; margin-left: 13px;}
+	.listBoxBody {}
+	.listRightDetails {padding-right: 15px; padding-left: 15px;}
+	.listRightDetails p.topBarCat {line-height: 15px;}
+	
+	
+	.header-bannerAbout {padding-top: 15px; padding-bottom: 15px;}
+	.header-bannerAbout h1 {font-size: 22px;}
+	.header-bannerAbout p {font-size: 13px;}
+	
+	.aboutFull .rightSection h2, .ourValues .rightSection h4, .ourValues .rightSection h4 {font-size: 22px; padding: 0 0 8px 0;}
+	.aboutFull .rightSection p, .ourValues .rightSection p {font-size: 13px; line-height: 22px;}
+	.ourValues {margin: 0 0 23px 0;}
+	.aboutFull {margin-bottom: 40px; padding-top: 42px; padding-bottom: 7px;}
+	
+	.imgLeft{max-width: 100%; text-align: center;}
+	.ourValues .imgLeft {max-width: 100%; text-align: center; padding-bottom: 25px;}
+	.aboutFull .rightSection, .ourValues .rightSection{max-width: 100%; text-align: center;}
+	.loginWraper h1 {font-size: 18px;}
+}
+
+@media only screen and (max-width:420px) {	
+.slider-area .txt h2 {font-size: 20px; margin-bottom: 20px;}
+.slider-area .txt p {font-size: 18px; margin-top: 0px;}
+.slider-area a.orgBtn {font-size: 14px;}
+}
+	
+@media only screen and (max-width:380px) {	
+	
+	.listBoxFooter .right-btn {margin-top: 10px; width: 100%;}
+	.listBoxFooter .right-btn .btnAns:first-child{margin-left: 0;}
+}
+	
+	
+	
+	
+	
+	
 	
 	

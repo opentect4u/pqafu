@@ -4,6 +4,10 @@
             <p>Copyright © 2021 | Pqafu | All Rights Reserved</p>
          </div>
 </footer>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="<?=base_url()?>frontend/assets/js/scripts.js"></script>
+
 <?php if(! $this->session->userdata('user_id')){   ?>
       
      <a href="<?=base_url()?>user/subscribe" class="subscriptionBtnCustom"><img src="<?=base_url()?>frontend/images/subdcribe.png" alt=""/></a>
@@ -534,6 +538,15 @@ $(document).ready(function () {
 
  
  
+</script>
+
+<script>
+$(function() {
+    console.log($('#question_list > .listBox').length);
+});
+    // $(document).ready(function(){
+    //     console.log($('#question_list > .listBox').length);
+    // })
 </script>
   
 
